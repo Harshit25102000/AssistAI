@@ -14,7 +14,7 @@ export default function Page2() {
         <View style={styles.container}>
             <ScrollView>
             <View style={styles.about}>
-                <Text>{`AssistAI is using the immense power of GPTAI API of open AI for completion and editing text purposes.\nThis app is built with the objective of bringing the power of AI to each individual and make them experience it.AssistAI is a beta version built as a practise project,there are still many features under development to roll out,since the app doesn't use any dedicated backend on server still, it's possible for us to keep it running.\nIncase of any complaints or feedback please contact me. `}</Text>
+                <Text>{`AssistAI is using the immense power of GPTAI API of open AI for completion and editing text purposes.\nThis app is built with the objective of bringing the power of AI to each individual and make them experience it.AssistAI is a beta version built as a practise project and still uses static API key which can exhaust and app can run into problem , there are still many features under development to roll out like adding a cloud to send and update API key dynamically on device , since the app doesn't use any dedicated backend on server still, it's possible for us to keep it running.\nIncase of any complaints or feedback please contact me. `}</Text>
             </View>
             <View style={{ padding: 10, marginTop: 50 }}>
                 <Button

@@ -8,6 +8,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import Home from "../Home";
 import Page2 from "../Page2";
+import ImgPage from"../ImgPage";
 import Result from "../Result";
 const Tab = createBottomTabNavigator();
 
@@ -24,6 +25,9 @@ export default function TabNavigator() {
             } else if (route.name === "About") {
               iconName = "info-circle";
             }
+            else if (route.name === "Generate Image"){
+              iconName="image";
+            }
             return <FontAwesome5 name={iconName} size={24} color="black" />;
           },
         })}
@@ -31,6 +35,7 @@ export default function TabNavigator() {
         
       >
         <Tab.Screen name="AssistAI" component={Home} options={{tabBarHideOnKeyboard: true}}/>
+        <Tab.Screen name="Generate Image" component={ImgPage} options={{tabBarHideOnKeyboard: true}}/>
         <Tab.Screen name="About" component={Page2} options={{tabBarHideOnKeyboard: true}}/>
       </Tab.Navigator>
   );

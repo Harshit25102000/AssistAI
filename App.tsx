@@ -8,7 +8,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { NavigationContainer } from "@react-navigation/native";
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import TabNavigator from "./Components/TabNavigator";
-import Page2 from "./Components/Page2";
+import ImgResult from "./Components/ImgResult";
 import Result from "./Components/Result";
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
@@ -23,6 +23,7 @@ export default function App() {
           options={{ headerShown: false }}
         />
       <Stack.Screen name="Result" component={Result} />
+      <Stack.Screen name="ImgResult" component={ImgResult} />
       </Stack.Navigator>
     </NavigationContainer>
   );

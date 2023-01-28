@@ -47,14 +47,14 @@ export default function Home() {
         method:"POST",
         headers: {
             "Content-Type": "application/json",
-            "Authorization": "Bearer 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"
+            "Authorization": "Bearer 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"
         },
             
         body:JSON.stringify(info)
     }
         )
         const data= await response.json();
-        console.log(response)
+        console.log(data)
         const result=data.choices[0].text
         setLoading(false)
        
@@ -75,21 +75,27 @@ export default function Home() {
         method:"POST",
         headers: {
             "Content-Type": "application/json",
-            "Authorization": "Bearer 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"
+            "Authorization": "Bearer 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"
         },
             
         body:JSON.stringify(info)
     }
         )
         const data= await response.json();
-        console.log(response)
+        
         const result=data.choices[0].text
         setLoading(false)
        
         navigation.navigate('Result', { text: result })
     }
 
-  
+    if(isLoading){
+    setTimeout(function() {
+        if (isLoading) {
+            setLoading(false);
+            Alert.alert("Oops we ran into a problem");
+        }
+    }, 30000);}
 
 
     return (
@@ -106,7 +112,7 @@ export default function Home() {
             <ScrollView showsVerticalScrollIndicator={false}>
                 <View style={{ padding: 10 }}>
                     <Text style={styles.heading}>
-                        {`Instructions can be Translate into Spanish , Summarize this email , fix the spelling mistakes.\nPrompt is the text on which you want to apply your instruction.If you want to generate a textbleave instruction empty.\nFor Eg- Prompt will be "Write an essay on Democracy" and leave Instruction empty. \n`}
+                        {`Instructions can be "Translate into Spanish" , "Summarize this email" , "fix the spelling mistakes".\nPrompt is the text on which you want to apply your instruction.If you want to generate a textbleave instruction empty.\nFor Eg- Prompt will be "Write an essay on Democracy" and leave Instruction empty. \n`}
                     </Text>
                 </View>
                 <View style={{ padding: 10, }}>
@@ -114,7 +120,7 @@ export default function Home() {
 
                         multiline={true}
                         style={{ height: 40, backgroundColor: "#e6e6e6", fontSize: 15, textAlignVertical: 'top', color: "black" }}
-                        placeholder="Enter Instructions . Leave Blank incase you're genrating some text"
+                        placeholder="Enter Instructions"
                         onChangeText={newInstruction => setInstruction(newInstruction)}
                         defaultValue={instruction}
                         placeholderTextColor="black"
